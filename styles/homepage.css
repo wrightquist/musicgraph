@@ -1,0 +1,88 @@
+/*author: Wright Quist*/
+
+body{
+    background-color: white;
+}
+
+/*banner*/
+#banner{
+    background: linear-gradient(var(--accent), var(--accent3));
+    width: 100%;
+    color: var(--contrast-text);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 50px;
+    gap: 5%;
+}
+
+#banner h1{
+    font-family: var(--font-contrast);
+    font-size: 2.5rem;
+}
+
+#banner button{
+    color: var(--contrast-text);
+    background-color: var(--accent);
+    padding: 15px 20px;
+    border-radius: 100px;
+    margin-right: 15px;
+}
+
+#banner a{
+    font-weight: bold;
+    color: var(--accent);
+}
+
+#banner> img{
+    width: 30%;
+    height: auto;
+}
+
+#banner > div{
+    width: 70%;
+    margin-right: 0;
+    padding-right: 50px;
+    margin-left: auto;
+}
+
+/*cards*/
+#cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 200px;
+    height: 200px;
+    background-color: var(--middle-gray);
+    margin: 40px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--main-text)
+}
+
+@media only screen and (max-width: 750px){
+    #banner> img{
+        display: none;
+    }
+
+    #banner > div{
+        width: 100%;
+        margin-right: 0;
+        padding-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    #banner span{
+        display: inline-block;
+    }
+}

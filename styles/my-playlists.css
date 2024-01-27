@@ -1,0 +1,78 @@
+/*author: Wright Quist*/
+
+/*body styles*/
+#content{
+    padding: 50px;
+    width: 100%;
+}
+
+#content h1{
+    font-family: var(--font-contrast);
+    font-size: 2rem;
+    margin-top: 0;
+    color: var(--contrast-text);
+}
+
+/*list container*/
+#playlists{
+    width: 100%;
+    background: var(--contrast-text);
+    border-radius: 5px;
+}
+
+/*playlist list items*/
+.playlist{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+}
+
+.playlist-tab{
+    border-radius: 5px 5px 0 0;
+    background-color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.playlist h2{
+    font-size: 1.25rem;
+}
+
+.playlist a{
+    color: var(--main-text);
+}
+
+.divider{
+    width: 100%;
+    height: 2px;
+    background-color: var(--middle-gray);
+}
+
+.playlist > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playlist > div > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#new-playlist{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: var(--middle-gray);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-image: url('../images/plus.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: auto;
+}

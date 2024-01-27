@@ -1,0 +1,364 @@
+/* author: Wright Quist */
+
+
+/* header extras */
+#playlist-name {
+    border-bottom-width: 2px;
+    border-style: hidden hidden dashed hidden;
+    border-color: var(--light-text);
+    background: none;
+    font-weight: 400;
+    color: var(--middle-gray);
+}
+
+#fork-button{
+    border-radius: 45px;
+    background-color: var(--accent);
+    padding: 3px 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    color: var(--contrast-text);
+}
+
+#fork-button > span{
+    font-size: 0.8rem;
+}
+
+#fork-button > *{
+    margin: 0;
+}
+
+/*  node area  */
+#node-controls{
+    position: relative;
+    height: 100%;
+}
+
+#undo-redo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    pointer-events: auto;
+}
+
+#undo-redo button{
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/undo.svg');
+    background-size: cover;
+    background-color: transparent;
+    opacity: 50%;
+}
+
+#redo{
+    transform:scaleX(-1);
+}
+
+#info{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: var(--middle-gray);
+    font-family: var(--font-contrast);
+    font-weight: bold;
+    color: var(--page-bg);
+    pointer-events: auto;
+}
+
+#create-node{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: var(--middle-gray);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-image: url('../images/plus.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: auto;
+}
+
+.node-area {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+/* bottom bar  */
+
+#bottom-bar{
+    background-color: var(--page-bars);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 15px;
+    width: 100%;
+    align-items: center;
+}
+
+#song-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    flex-grow: 0;
+}
+
+#song-info > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 0;
+}
+
+#title{
+    font-weight: bold;
+    color: var(--contrast-text);
+    font-size: 0.9rem;
+}
+
+#artist{
+    color: var(--white-70);
+    font-size: 0.9rem;
+}
+
+#song-info > img{
+    width: 60px;
+    height: 60px;
+    background-color: var(--middle-gray);
+}
+
+#controls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+#controls div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 0;
+    gap: 15px;
+    align-items: center;
+}
+
+#volume{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#volume-button{
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/volume.svg');
+    background-size: cover;
+}
+
+.skip{
+    background-image: url('../images/back.svg');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+}
+
+#next-song{
+    transform:scaleX(-1);
+}
+
+#play{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+
+#play.playing{
+    background-image: url('../images/pause.svg');
+}
+
+#play.paused{
+    background-image: url('../images/play.svg');
+}
+
+.time-text{
+    color: var(--white-70);
+    font-size: 0.9rem;
+    width: 40px;
+}
+
+#play-small{
+    display: none;
+}
+
+
+@media only screen and (max-width: 700px){
+    #fork-button > span{
+        display: none;
+    }
+
+    #fork-button{
+        padding: 3px;
+    }
+
+    #playlist-privacy{
+        display: none;
+    }
+
+    #volume{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    #wordmark::after{
+        content: "MG";
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    #wordmark h1{
+        display: none;
+    }
+
+    #top{
+        display: none !important;
+    }
+
+    #play-small{
+        display: inline-block;
+        background-image: url('../images/play.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+    }
+
+    #song-info-small{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 0;
+    }
+
+    #song-info img{
+        width: 40px;
+        height: 40px;
+    }
+
+    #bottom-bar{
+        flex-direction: column;
+    }
+}
+
+.connection{
+    border: 1px solid black;
+    height: 0;
+    position: absolute;
+}
+
+.connection.path{
+    box-shadow: #2196F3 3px 3px 3px;
+}
+
+.node{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+    position: absolute;
+    pointer-events: auto;
+}
+
+.node img{
+    width: 100%;
+    height: 100%;
+}
+
+.node-area > div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.node.selected{
+    box-shadow: #2196F3 3px 3px 3px;
+}
+
+.node.current{
+    box-shadow: #f3218a -3px -3px 3px;
+}
+
+#new-node-modal{
+    pointer-events: auto;
+}
+
+#new-node-modal>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 10px;
+}
+
+#new-node-modal>div>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#new-node-cancel{
+    background-color: gray;
+    color: white;
+}
+
+#new-node-button{
+    background-color: blue;
+    color: white;
+}
+
+button:disabled{
+    opacity: 60%;
+    cursor: auto;
+}
+
+button:disabled:hover{
+    opacity: 60%;
+}
+
+
+#shortcuts{
+    position: absolute;
+    bottom: 60px;
+    left: 10px;
+}
+
+#shortcuts td{
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#like-button{
+    font-size: 1.5em;
+}
+
+#like-button.liked{
+    color: goldenrod;
+}
+
+/*TODO: prevent name and author from wrapping*/
